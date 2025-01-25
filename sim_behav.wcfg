@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Basys3_sim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Basys3_sim" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="29500000001fs"></ZoomEndTime>
+      <Cursor1Time time="12680000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="204"></NameColumnWidth>
+      <ValueColumnWidth column_width="97"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="37" />
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/rstn" type="logic">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/BS_Halt" type="logic">
+      <obj_property name="ElementShortName">BS_Halt</obj_property>
+      <obj_property name="ObjectShortName">BS_Halt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/BS_Branch" type="logic">
+      <obj_property name="ElementShortName">BS_Branch</obj_property>
+      <obj_property name="ObjectShortName">BS_Branch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/BS_PCSrc" type="logic">
+      <obj_property name="ElementShortName">BS_PCSrc</obj_property>
+      <obj_property name="ObjectShortName">BS_PCSrc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/Display/DP_curPC" type="array">
+      <obj_property name="ElementShortName">DP_curPC[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DP_curPC[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/Display/DP_nextPC" type="array">
+      <obj_property name="ElementShortName">DP_nextPC[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DP_nextPC[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/Display/DP_Reg" type="array">
+      <obj_property name="ElementShortName">DP_Reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DP_Reg[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/Display/DP_DB" type="array">
+      <obj_property name="ElementShortName">DP_DB[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DP_DB[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/Display/DP_EX_PC" type="array">
+      <obj_property name="ElementShortName">DP_EX_PC[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DP_EX_PC[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/Display/DP_EX_Result" type="array">
+      <obj_property name="ElementShortName">DP_EX_Result[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DP_EX_Result[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/Display/DP_MEM_PC" type="array">
+      <obj_property name="ElementShortName">DP_MEM_PC[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DP_MEM_PC[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/Display/DP_MEM_Read" type="array">
+      <obj_property name="ElementShortName">DP_MEM_Read[7:0]</obj_property>
+      <obj_property name="ObjectShortName">DP_MEM_Read[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/RegFile/RegFile" type="array">
+      <obj_property name="ElementShortName">RegFile[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">RegFile[0:31][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/PC/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/PC/rstn" type="logic">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/PC/PCSrc" type="logic">
+      <obj_property name="ElementShortName">PCSrc</obj_property>
+      <obj_property name="ObjectShortName">PCSrc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/PC/newPC0" type="array">
+      <obj_property name="ElementShortName">newPC0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">newPC0[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/PC/newPC1" type="array">
+      <obj_property name="ElementShortName">newPC1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">newPC1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/PC/curPC" type="array">
+      <obj_property name="ElementShortName">curPC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">curPC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/IF_Ins" type="array">
+      <obj_property name="ElementShortName">IF_Ins[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IF_Ins[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/ID_Ins" type="array">
+      <obj_property name="ElementShortName">ID_Ins[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ID_Ins[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/IF_PC" type="array">
+      <obj_property name="ElementShortName">IF_PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IF_PC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/IF_newPC" type="array">
+      <obj_property name="ElementShortName">IF_newPC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IF_newPC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/ID_PC" type="array">
+      <obj_property name="ElementShortName">ID_PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ID_PC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/EX_PC" type="array">
+      <obj_property name="ElementShortName">EX_PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">EX_PC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/MEM_PC" type="array">
+      <obj_property name="ElementShortName">MEM_PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MEM_PC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/WB_PC" type="array">
+      <obj_property name="ElementShortName">WB_PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WB_PC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/Forwarding/FSrcA" type="array">
+      <obj_property name="ElementShortName">FSrcA[1:0]</obj_property>
+      <obj_property name="ObjectShortName">FSrcA[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/Forwarding/FSrcB" type="array">
+      <obj_property name="ElementShortName">FSrcB[1:0]</obj_property>
+      <obj_property name="ObjectShortName">FSrcB[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/ALU/Result" type="array">
+      <obj_property name="ElementShortName">Result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/Forwarding/MEM_Data_out" type="array">
+      <obj_property name="ElementShortName">MEM_Data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MEM_Data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/Forwarding/WB_Data_out" type="array">
+      <obj_property name="ElementShortName">WB_Data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WB_Data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/Forwarding/rs" type="array">
+      <obj_property name="ElementShortName">rs[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/Forwarding/rt" type="array">
+      <obj_property name="ElementShortName">rt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/Forwarding/MEM_WriteReg" type="array">
+      <obj_property name="ElementShortName">MEM_WriteReg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">MEM_WriteReg[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Basys3_sim/Basys3/PipelineCPU/Forwarding/WB_WriteReg" type="array">
+      <obj_property name="ElementShortName">WB_WriteReg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">WB_WriteReg[4:0]</obj_property>
+   </wvobject>
+</wave_config>

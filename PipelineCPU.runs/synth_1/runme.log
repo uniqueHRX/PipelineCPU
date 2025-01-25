@@ -1,0 +1,1110 @@
+
+*** Running vivado
+    with args -log Basys3.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Basys3.tcl
+
+
+****** Vivado v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source Basys3.tcl -notrace
+Command: synth_design -top Basys3 -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 74136 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 949.816 ; gain = 235.344
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Basys3' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Basys3.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PipelineCPU' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/PipelineCPU.v:23]
+	Parameter _ALUSrcA bound to: 0 - type: integer 
+	Parameter _ALUSrcB bound to: 1 - type: integer 
+	Parameter _DBDataSrc bound to: 2 - type: integer 
+	Parameter _RegWre bound to: 3 - type: integer 
+	Parameter _InsMemRW bound to: 4 - type: integer 
+	Parameter _mRD bound to: 5 - type: integer 
+	Parameter _mWR bound to: 6 - type: integer 
+	Parameter _ExtSel bound to: 7 - type: integer 
+	Parameter _RegDst_1 bound to: 9 - type: integer 
+	Parameter _RegDst_2 bound to: 8 - type: integer 
+	Parameter _ALUOp_1 bound to: 12 - type: integer 
+	Parameter _ALUOp_2 bound to: 11 - type: integer 
+	Parameter _ALUOp_3 bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'IF_ID' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/IF_ID.v:23]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register PC_out_reg in module IF_ID. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/IF_ID.v:61]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Ins_out_reg in module IF_ID. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/IF_ID.v:62]
+WARNING: [Synth 8-5788] Register PC_out_reg in module IF_ID is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/IF_ID.v:61]
+WARNING: [Synth 8-5788] Register Ins_out_reg in module IF_ID is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/IF_ID.v:62]
+INFO: [Synth 8-6155] done synthesizing module 'IF_ID' (1#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/IF_ID.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:23]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register PC_out_reg in module ID_EX. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:98]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Ins_out_reg in module ID_EX. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:99]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Signals_out_reg in module ID_EX. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:100]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register ReadData1_out_reg in module ID_EX. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:101]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register ReadData2_out_reg in module ID_EX. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:102]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Extend_out_reg in module ID_EX. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:103]
+WARNING: [Synth 8-5788] Register PC_out_reg in module ID_EX is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:98]
+WARNING: [Synth 8-5788] Register Ins_out_reg in module ID_EX is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:99]
+WARNING: [Synth 8-5788] Register Signals_out_reg in module ID_EX is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:100]
+WARNING: [Synth 8-5788] Register ReadData1_out_reg in module ID_EX is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:101]
+WARNING: [Synth 8-5788] Register ReadData2_out_reg in module ID_EX is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:102]
+WARNING: [Synth 8-5788] Register Extend_out_reg in module ID_EX is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:103]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX' (2#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ID_EX.v:23]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:23]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register PC_out_reg in module EX_MEM. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:120]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register BranchPC_out_reg in module EX_MEM. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:121]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Ins_out_reg in module EX_MEM. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:122]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Signals_out_reg in module EX_MEM. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:123]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register ReadData2_out_reg in module EX_MEM. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:124]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Result_out_reg in module EX_MEM. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:125]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register zero_out_reg in module EX_MEM. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:126]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register sign_out_reg in module EX_MEM. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:127]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register WriteReg_out_reg in module EX_MEM. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:128]
+WARNING: [Synth 8-5788] Register PC_out_reg in module EX_MEM is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:120]
+WARNING: [Synth 8-5788] Register BranchPC_out_reg in module EX_MEM is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:121]
+WARNING: [Synth 8-5788] Register Ins_out_reg in module EX_MEM is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:122]
+WARNING: [Synth 8-5788] Register Signals_out_reg in module EX_MEM is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:123]
+WARNING: [Synth 8-5788] Register ReadData2_out_reg in module EX_MEM is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:124]
+WARNING: [Synth 8-5788] Register Result_out_reg in module EX_MEM is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:125]
+WARNING: [Synth 8-5788] Register zero_out_reg in module EX_MEM is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:126]
+WARNING: [Synth 8-5788] Register sign_out_reg in module EX_MEM is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:127]
+WARNING: [Synth 8-5788] Register WriteReg_out_reg in module EX_MEM is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:128]
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM' (3#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/EX_MEM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:23]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register PC_out_reg in module MEM_WB. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:104]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register BranchPC_out_reg in module MEM_WB. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:105]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Ins_out_reg in module MEM_WB. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:106]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Signals_out_reg in module MEM_WB. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:107]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register MemData_out_reg in module MEM_WB. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:108]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Result_out_reg in module MEM_WB. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:109]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register zero_out_reg in module MEM_WB. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:110]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register sign_out_reg in module MEM_WB. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:111]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register WriteReg_out_reg in module MEM_WB. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:112]
+WARNING: [Synth 8-5788] Register PC_out_reg in module MEM_WB is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:104]
+WARNING: [Synth 8-5788] Register BranchPC_out_reg in module MEM_WB is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:105]
+WARNING: [Synth 8-5788] Register Ins_out_reg in module MEM_WB is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:106]
+WARNING: [Synth 8-5788] Register Signals_out_reg in module MEM_WB is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:107]
+WARNING: [Synth 8-5788] Register MemData_out_reg in module MEM_WB is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:108]
+WARNING: [Synth 8-5788] Register Result_out_reg in module MEM_WB is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:109]
+WARNING: [Synth 8-5788] Register zero_out_reg in module MEM_WB is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:110]
+WARNING: [Synth 8-5788] Register sign_out_reg in module MEM_WB is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:111]
+WARNING: [Synth 8-5788] Register WriteReg_out_reg in module MEM_WB is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:112]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB' (4#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/MEM_WB.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PC' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/PC.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PC' (5#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/PC.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Adder' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Adder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Adder' (6#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Adder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'InsMem' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/InsMem.v:23]
+INFO: [Synth 8-3876] $readmem data file 'D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/instructions.txt' is read successfully [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/InsMem.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'InsMem' (7#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/InsMem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ControlUnit' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:24]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:54]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'ControlUnit' (8#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:24]
+WARNING: [Synth 8-7023] instance 'ControlUnit' of module 'ControlUnit' has 13 connections declared, but only 3 given [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/PipelineCPU.v:241]
+INFO: [Synth 8-6157] synthesizing module 'RegFile' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:23]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[0] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[1] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[2] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[3] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[4] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[5] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[6] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[7] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[8] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[9] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[10] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[11] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[12] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[13] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[14] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[15] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[16] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[17] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[18] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[19] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[20] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[21] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[22] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[23] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[24] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[25] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[26] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[27] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[28] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[29] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[30] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register RegFile_reg[31] in module RegFile. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[0] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[1] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[2] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[3] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[4] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[5] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[6] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[7] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[8] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[9] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[10] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[11] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[12] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[13] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[14] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[15] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[16] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[17] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[18] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[19] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[20] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[21] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[22] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[23] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[24] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[25] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[26] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[27] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[28] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[29] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[30] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+WARNING: [Synth 8-5788] Register RegFile_reg[31] in module RegFile is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'RegFile' (9#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegFile.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Extend' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Extend.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Extend' (10#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Extend.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Mux32bit' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Mux32bit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Mux32bit' (11#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Mux32bit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (12#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegSel' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegSel.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegSel' (13#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/RegSel.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Forwarding' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Forwarding.v:23]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register FSrcA_reg in module Forwarding. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Forwarding.v:62]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register FSrcB_reg in module Forwarding. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Forwarding.v:65]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register MEM_Data_out_reg in module Forwarding. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Forwarding.v:68]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register WB_Data_out_reg in module Forwarding. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Forwarding.v:69]
+WARNING: [Synth 8-5788] Register FSrcA_reg in module Forwarding is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Forwarding.v:62]
+WARNING: [Synth 8-5788] Register FSrcB_reg in module Forwarding is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Forwarding.v:65]
+WARNING: [Synth 8-5788] Register MEM_Data_out_reg in module Forwarding is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Forwarding.v:68]
+WARNING: [Synth 8-5788] Register WB_Data_out_reg in module Forwarding is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Forwarding.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'Forwarding' (14#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Forwarding.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Stall' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Stall.v:23]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register PCSrc_reg in module Stall. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Stall.v:53]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register newPC_reg in module Stall. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Stall.v:54]
+WARNING: [Synth 8-5788] Register PCSrc_reg in module Stall is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Stall.v:53]
+WARNING: [Synth 8-5788] Register newPC_reg in module Stall is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Stall.v:54]
+INFO: [Synth 8-6155] done synthesizing module 'Stall' (15#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Stall.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DataMem' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/DataMem.v:23]
+WARNING: [Synth 8-567] referenced signal 'DataAddr' should be on the sensitivity list [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/DataMem.v:66]
+WARNING: [Synth 8-4767] Trying to implement RAM 'DataMem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM "DataMem_reg" dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'DataMem' (16#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/DataMem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Branch' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Branch.v:23]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register Branch_reg in module Branch. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Branch.v:73]
+CRITICAL WARNING: [Synth 8-5413] Mix of synchronous and asynchronous control for register newPC_reg in module Branch. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Branch.v:82]
+WARNING: [Synth 8-5788] Register Branch_reg in module Branch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Branch.v:73]
+WARNING: [Synth 8-5788] Register newPC_reg in module Branch is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Branch.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'Branch' (17#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Branch.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DBSel' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/DBSel.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DBSel' (18#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/DBSel.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Halt' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Halt.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Halt' (19#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Halt.v:23]
+INFO: [Synth 8-6157] synthesizing module 'DemoBus' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/DemoBus.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'DemoBus' (20#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/DemoBus.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PipelineCPU' (21#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/PipelineCPU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ClockDiv' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ClockDiv.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ClockDiv' (22#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ClockDiv.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Debounce' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Debounce.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Debounce' (23#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Debounce.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Display' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Display.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Display.v:56]
+INFO: [Synth 8-226] default block is never used [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Display.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'Display' (24#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Display.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Basys3' (25#1) [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Basys3.v:23]
+WARNING: [Synth 8-3331] design ClockDiv has unconnected port rstn
+WARNING: [Synth 8-3331] design DemoBus has unconnected port sysCLK
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[31]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[30]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[29]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[28]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[27]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[26]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[25]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[24]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[23]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[22]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[21]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[20]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[19]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[18]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[17]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[16]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[15]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[14]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[13]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[12]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[11]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[10]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[9]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port IF_PC[8]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[31]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[30]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[29]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[28]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[27]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[26]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[25]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[24]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[23]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[22]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[21]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[20]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[19]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[18]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[17]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[16]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[15]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[14]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[13]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[12]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[11]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[10]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[9]
+WARNING: [Synth 8-3331] design DemoBus has unconnected port WB_WriteData[8]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[25]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[24]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[23]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[22]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[21]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[20]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[19]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[18]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[17]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[16]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[15]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[14]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[13]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[12]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[11]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[10]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[9]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[8]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[7]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[6]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[5]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[4]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[3]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[2]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[1]
+WARNING: [Synth 8-3331] design Halt has unconnected port WB_Ins[0]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[25]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[24]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[23]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[22]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[21]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[20]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[19]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[18]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[17]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[16]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[15]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[14]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[13]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[12]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[11]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[10]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[9]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[8]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[7]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[6]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[5]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[4]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[3]
+WARNING: [Synth 8-3331] design Stall has unconnected port Ins[2]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1068.578 ; gain = 354.105
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1068.578 ; gain = 354.105
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1068.578 ; gain = 354.105
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.139 . Memory (MB): peak = 1068.578 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/constrs_1/new/Basys3.xdc]
+WARNING: [Vivado 12-507] No nets matched 'reset_IBUF'. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/constrs_1/new/Basys3.xdc:1]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/constrs_1/new/Basys3.xdc:1]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/constrs_1/new/Basys3.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/constrs_1/new/Basys3.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Basys3_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Basys3_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1182.902 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1182.902 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1182.902 ; gain = 468.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1182.902 ; gain = 468.430
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1182.902 ; gain = 468.430
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "ALUSrcB" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ALUSrcA" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'ALUSrcA_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:58]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUSrcB_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:46]
+WARNING: [Synth 8-327] inferring latch for variable 'DBDataSrc_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:47]
+WARNING: [Synth 8-327] inferring latch for variable 'RegWre_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'InsMemRW_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:48]
+WARNING: [Synth 8-327] inferring latch for variable 'mWR_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:50]
+WARNING: [Synth 8-327] inferring latch for variable 'ExtSel_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:51]
+WARNING: [Synth 8-327] inferring latch for variable 'RegDst_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:52]
+WARNING: [Synth 8-327] inferring latch for variable 'ALUOp_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/ControlUnit.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'Halt_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Halt.v:37]
+WARNING: [Synth 8-327] inferring latch for variable 'PC_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/Halt.v:39]
+WARNING: [Synth 8-327] inferring latch for variable 'Demo_PC_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/DemoBus.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'Demo_newPC_reg' [D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/DemoBus.v:45]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1182.902 ; gain = 468.430
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 5     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 6     
+	   2 Input      7 Bit       Adders := 3     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 55    
+	               16 Bit    Registers := 3     
+	                8 Bit    Registers := 257   
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 50    
+	   3 Input     32 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 7     
+	   4 Input     16 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 144   
+	   2 Input      8 Bit        Muxes := 256   
+	   2 Input      5 Bit        Muxes := 8     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	  10 Input      3 Bit        Muxes := 1     
+	  16 Input      3 Bit        Muxes := 1     
+	  16 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 17    
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 275   
+	  10 Input      1 Bit        Muxes := 3     
+	  16 Input      1 Bit        Muxes := 9     
+	   3 Input      1 Bit        Muxes := 33    
+	   4 Input      1 Bit        Muxes := 65    
+	   5 Input      1 Bit        Muxes := 188   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module IF_ID 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+Module ID_EX 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 9     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module EX_MEM 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	               16 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 9     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 5     
+Module MEM_WB 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	               16 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 9     
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 5     
+Module PC 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module Adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+Module InsMem 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 3     
+Module ControlUnit 
+Detailed RTL Component Info : 
++---Muxes : 
+	  10 Input      3 Bit        Muxes := 1     
+	  16 Input      3 Bit        Muxes := 1     
+	  16 Input      2 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 3     
+	  16 Input      1 Bit        Muxes := 9     
+Module RegFile 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 32    
+Module Extend 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module Mux32bit 
+Detailed RTL Component Info : 
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+Module RegSel 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 2     
+Module Forwarding 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module Stall 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+Module DataMem 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 256   
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 144   
+	   2 Input      8 Bit        Muxes := 252   
+	   4 Input      2 Bit        Muxes := 16    
+	   2 Input      1 Bit        Muxes := 250   
+	   4 Input      1 Bit        Muxes := 64    
+	   5 Input      1 Bit        Muxes := 188   
+Module Branch 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 6     
+Module DBSel 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module Halt 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module DemoBus 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 4     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module PipelineCPU 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
+Module ClockDiv 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
+Module Debounce 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module Display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Signals_out_reg[2]' (FDCPE) to 'PipelineCPU/ID_EX/Signals_out_reg[5]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[16]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[17]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[18]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[19]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[20]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[21]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[22]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[23]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[24]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[25]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[26]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[27]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[28]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[29]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[30]' (FDCPE) to 'PipelineCPU/ID_EX/Extend_out_reg[31]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\Display/DisplayCode_reg[7] )
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/EX_MEM/Signals_out_reg[2]' (FDCPE) to 'PipelineCPU/EX_MEM/Signals_out_reg[5]'
+WARNING: [Synth 8-3332] Sequential element (InsMemRW_reg) is unused and will be removed from module ControlUnit.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[8]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[6]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[9]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[7]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[10]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[8]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[11]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[9]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[12]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[10]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[13]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[11]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[14]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[12]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[15]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[13]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[16]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[14]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[17]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[15]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[18]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[16]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[19]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[17]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[20]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[18]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[21]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[19]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[22]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[20]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[23]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[21]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[24]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[22]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[25]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[23]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[26]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[24]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[27]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\Ins_out_reg[25]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[28]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[29]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[30]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[31]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[0]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[4]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[1]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[5]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[2]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[6]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[3]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/EX_MEM/\BranchPC_out_reg[7]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[8]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[9]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[10]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[11]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[12]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[13]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[14]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[15]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[16]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[17]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[18]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[19]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[20]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[21]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[22]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[23]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[24]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[25]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[26]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[27]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[28]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[29]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[30]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[31]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[0]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[4]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[1]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[5]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[2]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[6]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[3]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Branch/\newPC_reg[7]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[8]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[9]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[10]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[11]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[12]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[13]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[14]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[15]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[16]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[17]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[18]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[19]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[20]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[21]_C )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (PipelineCPU/Stall/\newPC_reg[22]_C )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[4]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[4]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[4]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[4]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[5]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[5]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[5]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[5]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[0]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[0]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[0]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[0]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[2]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[2]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[2]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[2]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[1]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[1]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[1]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[1]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[3]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[3]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[3]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[3]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[15]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[15]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[15]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[15]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[11]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[11]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[11]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[11]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[12]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[12]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[12]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[12]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[13]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[13]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[13]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[13]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[14]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[14]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[14]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[14]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[8]_P' (FDPE) to 'PipelineCPU/ID_EX/Ins_out_reg[8]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[8]_C' (FDCE) to 'PipelineCPU/ID_EX/Ins_out_reg[8]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[9]_P' (FDPE) to 'PipelineCPU/ID_EX/Ins_out_reg[9]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[9]_C' (FDCE) to 'PipelineCPU/ID_EX/Ins_out_reg[9]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[10]_P' (FDPE) to 'PipelineCPU/ID_EX/Ins_out_reg[10]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Extend_out_reg[10]_C' (FDCE) to 'PipelineCPU/ID_EX/Ins_out_reg[10]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[6]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[6]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[6]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[6]_C'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[7]_P' (FDPE) to 'PipelineCPU/ID_EX/Extend_out_reg[7]_P'
+INFO: [Synth 8-3886] merging instance 'PipelineCPU/ID_EX/Ins_out_reg[7]_C' (FDCE) to 'PipelineCPU/ID_EX/Extend_out_reg[7]_C'
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[31]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[30]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[29]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[28]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[27]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[26]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[25]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[24]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[23]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[22]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[21]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[20]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[19]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[18]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[17]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[16]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[15]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[14]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[13]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[12]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[11]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[10]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[9]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[8]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[7]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[6]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[5]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[4]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[3]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[2]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[1]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[0]_C) is unused and will be removed from module IF_ID.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[31]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[30]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[29]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[28]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[27]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[26]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[25]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[24]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[23]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[22]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[21]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[20]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[19]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[18]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[17]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[16]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[10]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[9]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Ins_out_reg[8]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Signals_out_reg[12]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Signals_out_reg[11]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Signals_out_reg[10]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Signals_out_reg[9]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Signals_out_reg[8]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Signals_out_reg[6]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Signals_out_reg[5]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Signals_out_reg[3]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Signals_out_reg[1]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (Signals_out_reg[0]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[31]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[30]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[29]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[28]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[27]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[26]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[25]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[24]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[23]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[22]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[21]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[20]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[19]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[18]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[17]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[16]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[15]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[14]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[13]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[12]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[11]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[10]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[9]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[8]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[7]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[6]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[5]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[4]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[3]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[2]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[1]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData1_out_reg[0]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData2_out_reg[31]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData2_out_reg[30]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData2_out_reg[29]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData2_out_reg[28]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData2_out_reg[27]_C) is unused and will be removed from module ID_EX.
+WARNING: [Synth 8-3332] Sequential element (ReadData2_out_reg[26]_C) is unused and will be removed from module ID_EX.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 1205.965 ; gain = 491.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|InsMem      | p_0_out    | 128x8         | LUT            | 
+|InsMem      | p_0_out    | 128x8         | LUT            | 
+|InsMem      | p_0_out    | 128x8         | LUT            | 
+|InsMem      | p_0_out    | 128x8         | LUT            | 
+|InsMem      | p_0_out    | 128x8         | LUT            | 
+|InsMem      | p_0_out    | 128x8         | LUT            | 
+|InsMem      | p_0_out    | 128x8         | LUT            | 
+|InsMem      | p_0_out    | 128x8         | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:43 . Memory (MB): peak = 1205.965 ; gain = 491.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:44 . Memory (MB): peak = 1205.965 ; gain = 491.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 1368.258 ; gain = 653.785
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:52 . Memory (MB): peak = 1368.258 ; gain = 653.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:52 . Memory (MB): peak = 1368.258 ; gain = 653.785
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 1368.258 ; gain = 653.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 1368.258 ; gain = 653.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 1368.258 ; gain = 653.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 1368.258 ; gain = 653.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     5|
+|2     |CARRY4 |   162|
+|3     |LUT1   |    18|
+|4     |LUT2   |  1082|
+|5     |LUT3   |  1553|
+|6     |LUT4   |   395|
+|7     |LUT5   |   424|
+|8     |LUT6   |  4052|
+|9     |MUXF7  |  1368|
+|10    |MUXF8  |   512|
+|11    |FDCE   |   352|
+|12    |FDPE   |   486|
+|13    |FDRE   |  2418|
+|14    |FDSE   |  1024|
+|15    |LD     |    51|
+|16    |LDC    |   510|
+|17    |LDP    |     1|
+|18    |IBUF   |     5|
+|19    |OBUF   |    12|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------+------------+------+
+|      |Instance        |Module      |Cells |
++------+----------------+------------+------+
+|1     |top             |            | 14430|
+|2     |  ClockDiv      |ClockDiv    |   100|
+|3     |  Debounce      |Debounce    |   105|
+|4     |  Display       |Display     |    73|
+|5     |  PipelineCPU   |PipelineCPU | 14130|
+|6     |    InsMem      |InsMem      |    24|
+|7     |    DataMem     |DataMem     |  5842|
+|8     |    Add4toPC    |Adder       |     9|
+|9     |    AddExttoPC  |Adder_0     |    66|
+|10    |    Branch      |Branch      |   275|
+|11    |    ControlUnit |ControlUnit |    21|
+|12    |    DemoBus     |DemoBus     |    19|
+|13    |    EX_MEM      |EX_MEM      |  3007|
+|14    |    Forwarding  |Forwarding  |   662|
+|15    |    Halt        |Halt        |    49|
+|16    |    ID_EX       |ID_EX       |   855|
+|17    |    IF_ID       |IF_ID       |   345|
+|18    |    MEM_WB      |MEM_WB      |   565|
+|19    |    PC          |PC          |   240|
+|20    |    RegFile     |RegFile     |  2002|
+|21    |    Stall       |Stall       |   149|
++------+----------------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 1368.258 ; gain = 653.785
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 587 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:50 . Memory (MB): peak = 1368.258 ; gain = 539.461
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 1368.258 ; gain = 653.785
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.145 . Memory (MB): peak = 1368.258 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2604 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1368.258 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 562 instances were transformed.
+  LD => LDCE: 51 instances
+  LDC => LDCE: 510 instances
+  LDP => LDPE (inverted pins: G): 1 instance 
+
+INFO: [Common 17-83] Releasing license: Synthesis
+221 Infos, 283 Warnings, 67 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:01:00 . Memory (MB): peak = 1368.258 ; gain = 944.043
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1368.258 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.runs/synth_1/Basys3.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Basys3_utilization_synth.rpt -pb Basys3_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 24 07:27:15 2025...
