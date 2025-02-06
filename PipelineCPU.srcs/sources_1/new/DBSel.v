@@ -21,16 +21,15 @@
 
 
 module DBSel (
-    input DBDataSrc,
-    input [4:0] WriteReg,
-    input [31:0] MemData,
-    input [31:0] Result,
-    input [31:0] PC,
-    output [31:0] WriteData
+    input DBDataSrc,  //寄存器数据源, 0: 来自ALU, 1: 来自数据存储器
+    input [4:0] WriteReg,  //目标寄存器
+    input [31:0] MemData,  //DataMem读出数据
+    input [31:0] Result,  //ALU运算结果
+    input [31:0] PC,  //当前PC+4
+    output [31:0] WriteData  //写入数据
 );
 
-  assign WriteData = (WriteReg == 5'b11111) ? PC 
-                    : DBDataSrc ? MemData
-                    : Result;
+  //选择写入数据
+  assign WriteData = (WriteReg == 5'b11111) ? PC : DBDataSrc ? MemData : Result;
 
 endmodule

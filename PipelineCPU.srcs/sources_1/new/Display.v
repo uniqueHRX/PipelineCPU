@@ -21,24 +21,24 @@
 
 
 module Display (
-    input sysCLK,
-    input [1:0] SW,
-    input [7:0]  DP_curPC,
-    input [7:0]  DP_nextPC,
+    input sysCLK,  //系统时钟
+    input [1:0] SW,  //显示切换
+    input [7:0] DP_curPC,  //显示数据输入
+    input [7:0] DP_nextPC,
     input [7:0] DP_Reg,
     input [7:0] DP_DB,
-    input [7:0]  DP_EX_PC,
-    input [7:0]  DP_EX_Result,
-    input [7:0]  DP_MEM_PC,
-    input [7:0]  DP_MEM_Read,
-    output reg [3:0] AN,
-    output reg [7:0] DisplayCode
+    input [7:0] DP_EX_PC,
+    input [7:0] DP_EX_Result,
+    input [7:0] DP_MEM_PC,
+    input [7:0] DP_MEM_Read,
+    output reg [3:0] AN,  //数码管选择信号
+    output reg [7:0] DisplayCode  //显示信号编码输出
 );
 
   //定义计数器
   integer i = 0;
 
-  //i循环
+  //i循环轮流刷新数码管
   always @(posedge sysCLK) begin
     if (i == 3) i = 0;
     else i = i + 1;
@@ -61,9 +61,11 @@ module Display (
     endcase
   end
 
+  //显示内容选择
   wire [3:0] code;
   assign code = (i == 0) ? data[3:0] : (i == 1) ? data[7:4] : (i == 2) ? data[11:8] : data[15:12];
 
+  //显示信号译码
   always @(negedge sysCLK) begin
     case (code)
       4'b0000: DisplayCode = 8'b1100_0000;  //0

@@ -21,9 +21,9 @@
 
 
 module Extend (
-    input [15:0] immediate,
-    input ExtSel,
-    output [31:0] Extend
+    input [15:0] immediate,  //immediate段
+    input ExtSel,  //立即数扩展方式, 0: 0扩展, 1: 符号扩展
+    output [31:0] Extend  //扩展后的立即数
 );
 
   //根据ExtSel进行立即数扩展

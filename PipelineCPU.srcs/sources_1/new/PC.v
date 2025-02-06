@@ -21,13 +21,13 @@
 
 
 module PC (
-    input sysCLK,
-    input clk,
-    input rstn,
-    input PCSrc,
-    input [31:0] newPC0,
-    input [31:0] newPC1,
-    output reg [31:0] curPC
+    input cntCLK,  //计数时钟
+    input clk,  //时钟信号
+    input rstn,  //重置信号
+    input PCSrc,  //PC选择信号, 0: PC+4, 1: 分支PC
+    input [31:0] newPC0,  //PC+4
+    input [31:0] newPC1,  //分支PC
+    output reg [31:0] curPC  //当前PC输出
 );
 
   // reg [31:0] nextPC;
@@ -42,9 +42,14 @@ module PC (
   //   if (rstn) nextPC <= newPC0;
   // end
 
+  //定义Clock-to-Q
+  integer _CLOCK_TO_Q = 8;
+
+  //定义计数器
   reg [31:0] cnt;
 
-  always @(posedge sysCLK or negedge rstn) begin
+  //延迟计数器，在计数时钟上升沿触发，若时钟信号为高电平，则计数器自增，反之则清零
+  always @(posedge cntCLK or negedge rstn) begin
     if (!rstn) begin
       cnt <= 0;
     end else begin
@@ -53,11 +58,11 @@ module PC (
     end
   end
 
-  always @(posedge sysCLK or negedge rstn) begin
-    if (!rstn) begin
+  //更新PC
+  always @(posedge cntCLK or negedge rstn) begin
+    if (!rstn) begin  //重置信号生效时触发
       curPC <= 0;
-      // nextPC <= 0;
-    end else if (rstn && cnt == 8) begin
+    end else if (rstn && cnt == _CLOCK_TO_Q) begin  //Clock-to-Q时触发
       if (PCSrc) curPC <= newPC1;
       else curPC <= newPC0;
     end

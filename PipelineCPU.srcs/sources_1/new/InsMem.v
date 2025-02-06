@@ -21,8 +21,8 @@
 
 
 module InsMem (
-    input [31:0] PC,
-    output [31:0] Ins
+    input  [31:0] PC,  //当前PC
+    output [31:0] Ins  //指令码输出
 );
 
   //定义指令存储器
@@ -30,12 +30,15 @@ module InsMem (
 
   //载入指令文件
   initial begin
-    $readmemh("D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/instructions.txt", InsMem);
+    $readmemh(
+        "D:/OneDrive - As You Wish/HRX/Programming/Vivado/PipelineCPU/PipelineCPU.srcs/sources_1/new/instructions.txt",
+        InsMem);
   end
 
+  //读取指令
   assign Ins[31:24] = InsMem[PC];
   assign Ins[23:16] = InsMem[PC+1];
-  assign Ins[15:8] = InsMem[PC+2];
-  assign Ins[7:0] = InsMem[PC+3];
+  assign Ins[15:8]  = InsMem[PC+2];
+  assign Ins[7:0]   = InsMem[PC+3];
 
 endmodule

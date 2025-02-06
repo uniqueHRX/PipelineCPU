@@ -21,23 +21,23 @@
 
 
 module DemoBus (
-    input sysCLK,
-    input rstn,
-    input Halt,
-    input [31:0] IF_PC,
-    input [31:0] ID_PC,
-    input [31:0] EX_PC,
-    input [31:0] MEM_PC,
-    input [31:0] WB_PC,
-    input WB_RegWre,
-    input [4:0] WB_WriteReg,
-    input [31:0] WB_WriteData,
-    output reg [7:0] Demo_PC,
-    output reg [7:0] Demo_newPC,
-    output reg [7:0] Demo_Reg,
-    output reg [7:0] Demo_DB
+    input rstn,  //重置信号
+    input Halt,  //停机信号, 0: 正常运行, 1: 停机
+    input [31:0] IF_PC,  //IF段PC
+    input [31:0] ID_PC,  //ID段PC+4
+    input [31:0] EX_PC,  //EX段PC+4
+    input [31:0] MEM_PC,  //MEM段PC+4
+    input [31:0] WB_PC,  //WB段PC+4
+    input WB_RegWre,  //WB段指令的寄存器写使能, 0: 不写寄存器, 1: 写寄存器
+    input [4:0] WB_WriteReg,  //WB段指令的目标寄存器
+    input [31:0] WB_WriteData,  //WB段指令的写入数据
+    output reg [7:0] Demo_PC,  //PC演示信号输出
+    output reg [7:0] Demo_newPC,  //newPC演示信号输出
+    output reg [7:0] Demo_Reg,  //目标寄存器演示信号输出
+    output reg [7:0] Demo_DB  //数据总线演示信号输出
 );
 
+  //实时生成演示信号
   always @(*) begin
     if (rstn) begin
       if (WB_PC != 0) begin

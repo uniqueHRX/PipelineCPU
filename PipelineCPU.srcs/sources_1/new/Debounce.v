@@ -21,9 +21,9 @@
 
 
 module Debounce (
-    input  clk,
-    input  Button,
-    output userCLK
+    input clk,  //硬件时钟
+    input Button,  //步进按钮
+    output userCLK  //用户时钟
 );
 
   //定义计数器上限

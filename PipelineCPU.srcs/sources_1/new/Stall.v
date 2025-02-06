@@ -21,15 +21,15 @@
 
 
 module Stall (
-    input sysCLK,
-    input clk,
-    input rstn,
-    input Branch,
-    input [31:0] BranchPC,
-    input [31:0] curPC,
-    input [31:0] Ins,
-    output reg PCSrc,
-    output reg [31:0] newPC
+    input cntCLK,  //计数时钟
+    input clk,  //时钟信号
+    input rstn,  //重置信号
+    input Branch,  //分支信号
+    input [31:0] BranchPC,  //分支目标PC
+    input [31:0] curPC,  //当前PC+4
+    input [31:0] Ins,  //当前指令码
+    output reg PCSrc,  //PC选择信号, 0: PC+4, 1: 分支PC
+    output reg [31:0] newPC  //新PC
 );
 
   // assign PCSrc = Branch ? 1 : (Ins[31:26] == 6'b100011) ? 1 : 0;
@@ -37,9 +37,14 @@ module Stall (
   // assign newPC = Branch ? BranchPC : curPC;
 
 
+  //定义Clock-to-Q
+  integer _CLOCK_TO_Q = 6;
+
+  //定义计数器
   reg [31:0] cnt;
 
-  always @(posedge sysCLK or negedge rstn) begin
+  //延迟计数器，在计数时钟上升沿触发，若时钟信号为高电平，则计数器自增，反之则清零
+  always @(posedge cntCLK or negedge rstn) begin
     if (!rstn) begin
       cnt <= 0;
     end else begin
@@ -48,11 +53,12 @@ module Stall (
     end
   end
 
-  always @(posedge sysCLK or negedge rstn) begin
-    if (rstn && cnt == 6) begin
+  //判断是否需要阻塞，输出PCSrc与新PC
+  always @(posedge cntCLK or negedge rstn) begin
+    if (rstn && cnt == _CLOCK_TO_Q) begin  //Clock-to-Q时触发
       PCSrc <= Branch ? 1 : (Ins[31:26] == 6'b100011) ? 1 : 0;
       newPC <= Branch ? BranchPC : curPC;
-    end else if (!rstn) begin
+    end else if (!rstn) begin  //重置信号生效时触发
       PCSrc <= 0;
       newPC <= 0;
     end

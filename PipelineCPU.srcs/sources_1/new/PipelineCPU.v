@@ -21,10 +21,10 @@
 
 
 module PipelineCPU (
-    input sysCLK,
-    input clk,
-    input rstn,
-    output [7:0] DP_curPC,
+    input cntCLK,  //计数时钟
+    input clk,  //时钟信号
+    input rstn,  //重置信号
+    output [7:0] DP_curPC,  //显示数据输出
     output [7:0] DP_nextPC,
     output [7:0] DP_Reg,
     output [7:0] DP_DB,
@@ -35,7 +35,7 @@ module PipelineCPU (
 );
 
 
-  // 定义常量
+  // 定义常量，指示控制信号在总线中的位置
   parameter _ALUSrcA = 0;
   parameter _ALUSrcB = 1;
   parameter _DBDataSrc = 2;
@@ -74,8 +74,6 @@ module PipelineCPU (
   wire [31:0] EX_ReadData1;
   wire [31:0] EX_ReadData2;
   wire [31:0] EX_Extend;
-  wire [31:0] EX_ALUinA;
-  wire [31:0] EX_ALUinB;
   wire [31:0] EX_Result;
   wire [4:0] EX_WriteReg;
   wire EX_zero;
@@ -95,15 +93,12 @@ module PipelineCPU (
 
   //WB
   wire [31:0] WB_PC;
-  wire [31:0] WB_BranchPC;
   wire [31:0] WB_Ins;
   wire [15:0] WB_Signals;
   wire [31:0] WB_MemData;
   wire [31:0] WB_Result;
   wire [31:0] WB_WriteData;
   wire [4:0] WB_WriteReg;
-  wire WB_zero;
-  wire WB_sign;
 
   //Branch and Stall
   wire BS_Halt;
@@ -132,8 +127,9 @@ module PipelineCPU (
 
   //段寄存器
 
+  //IF/ID寄存器
   IF_ID IF_ID (
-      .sysCLK (sysCLK),
+      .cntCLK (cntCLK),
       .clk    (clk),
       .rstn   (rstn),
       .clear  (BS_PCSrc),
@@ -143,8 +139,9 @@ module PipelineCPU (
       .Ins_out(ID_Ins)
   );
 
+  //ID/EX寄存器
   ID_EX ID_EX (
-      .sysCLK       (sysCLK),
+      .cntCLK       (cntCLK),
       .clk          (clk),
       .rstn         (rstn),
       .clear        (BS_Branch),
@@ -162,8 +159,9 @@ module PipelineCPU (
       .Extend_out   (EX_Extend)
   );
 
+  //EX/MEM寄存器
   EX_MEM EX_MEM (
-      .sysCLK       (sysCLK),
+      .cntCLK       (cntCLK),
       .clk          (clk),
       .rstn         (rstn),
       .clear        (BS_Halt),
@@ -187,35 +185,31 @@ module PipelineCPU (
       .WriteReg_out (MEM_WriteReg)
   );
 
+  //MEM/WB寄存器
   MEM_WB MEM_WB (
-      .sysCLK      (sysCLK),
+      .cntCLK      (cntCLK),
       .clk         (clk),
       .rstn        (rstn),
       .PC_in       (MEM_PC),
-      .BranchPC_in (MEM_BranchPC),
       .Ins_in      (MEM_Ins),
       .Signals_in  (MEM_Signals),
       .MemData_in  (MEM_MemData),
       .Result_in   (MEM_Result),
-      .zero_in     (MEM_zero),
-      .sign_in     (MEM_sign),
       .WriteReg_in (MEM_WriteReg),
       .PC_out      (WB_PC),
-      .BranchPC_out(WB_BranchPC),
       .Ins_out     (WB_Ins),
       .Signals_out (WB_Signals),
       .MemData_out (WB_MemData),
       .Result_out  (WB_Result),
-      .zero_out    (WB_zero),
-      .sign_out    (WB_sign),
       .WriteReg_out(WB_WriteReg)
   );
 
 
   //IF段
 
+  //程序计数器
   PC PC (
-      .sysCLK(sysCLK),
+      .cntCLK(cntCLK),
       .clk   (clk),
       .rstn  (rstn),
       .PCSrc (BS_PCSrc),
@@ -224,12 +218,14 @@ module PipelineCPU (
       .curPC (IF_PC)
   );
 
+  //PC+4加法器
   Adder Add4toPC (
       .inA(IF_PC),
       .inB({31'b0, 1'b1}),
       .Sum(IF_newPC)
   );
 
+  //指令存储器
   InsMem InsMem (
       .PC (IF_PC),
       .Ins(IF_Ins)
@@ -238,14 +234,16 @@ module PipelineCPU (
 
   //ID段
 
+  //控制单元
   ControlUnit ControlUnit (
       .op     (ID_Ins[31:26]),
       .funct  (ID_Ins[5:0]),
       .Signals(ID_Signals)
   );
 
+  //寄存器堆
   RegFile RegFile (
-      .sysCLK   (sysCLK),
+      .cntCLK   (cntCLK),
       .clk      (clk),
       .rstn     (rstn),
       .RegWre   (WB_Signals[_RegWre]),
@@ -257,6 +255,7 @@ module PipelineCPU (
       .ReadData2(ID_ReadData2)
   );
 
+  //立即数扩展
   Extend Extend (
       .immediate(ID_Ins[15:0]),
       .ExtSel   (ID_Signals[_ExtSel]),
@@ -266,8 +265,8 @@ module PipelineCPU (
 
   //EX段
 
+  //算术逻辑单元
   ALU ALU (
-      .sysCLK   (sysCLK),
       .ALUOp    ({EX_Signals[_ALUOp_1], EX_Signals[_ALUOp_2], EX_Signals[_ALUOp_3]}),
       .ReadData1(EX_ReadData1),
       .ReadData2(EX_ReadData2),
@@ -281,17 +280,17 @@ module PipelineCPU (
       .FSrcB    (FW_FSrcB),
       .Result   (EX_Result),
       .sign     (EX_sign),
-      .zero     (EX_zero),
-      .ALUinA   (EX_ALUinA),
-      .ALUinB   (EX_ALUinB)
+      .zero     (EX_zero)
   );
 
+  //PC分支加法器
   Adder AddExttoPC (
       .inA(EX_PC),
       .inB(EX_Extend),
       .Sum(EX_BranchPC)
   );
 
+  //目标寄存器选择
   RegSel RegSel (
       .RegDst  ({EX_Signals[_RegDst_1], EX_Signals[_RegDst_2]}),
       .rt      (EX_Ins[20:16]),
@@ -299,8 +298,9 @@ module PipelineCPU (
       .WriteReg(EX_WriteReg)
   );
 
+  //旁路单元
   Forwarding Forwarding (
-      .sysCLK      (sysCLK),
+      .cntCLK      (cntCLK),
       .clk         (clk),
       .rstn        (rstn),
       .MEM_RegWre  (MEM_Signals[_RegWre]),
@@ -317,8 +317,9 @@ module PipelineCPU (
       .WB_Data_out (FW_WB_Data)
   );
 
+  //阻塞控制单元
   Stall Stall (
-      .sysCLK  (sysCLK),
+      .cntCLK  (cntCLK),
       .clk     (clk),
       .rstn    (rstn),
       .Branch  (BS_Branch),
@@ -332,8 +333,9 @@ module PipelineCPU (
 
   //MEM段
 
+  //数据存储器
   DataMem DataMem (
-      .sysCLK   (sysCLK),
+      .cntCLK   (cntCLK),
       .clk      (clk),
       .Result   (MEM_Result),
       .ReadData2(MEM_ReadData2),
@@ -342,8 +344,9 @@ module PipelineCPU (
       .MemData  (MEM_MemData)
   );
 
+  //分支控制单元
   Branch Branch (
-      .sysCLK  (sysCLK),
+      .cntCLK  (cntCLK),
       .clk     (clk),
       .rstn    (rstn),
       .zero    (MEM_zero),
@@ -361,6 +364,7 @@ module PipelineCPU (
 
   //WB段
 
+  //数据总线选择器
   DBSel DBSel (
       .DBDataSrc(WB_Signals[_DBDataSrc]),
       .WriteReg (WB_WriteReg),
@@ -370,6 +374,7 @@ module PipelineCPU (
       .WriteData(WB_WriteData)
   );
 
+  //停机控制单元
   Halt Halt (
       .rstn  (rstn),
       .WB_Ins(WB_Ins),
@@ -379,9 +384,8 @@ module PipelineCPU (
   );
 
 
-  //Demo
+  //演示总线
   DemoBus DemoBus (
-      .sysCLK      (sysCLK),
       .rstn        (rstn),
       .Halt        (BS_Halt),
       .IF_PC       (IF_PC),
@@ -399,7 +403,7 @@ module PipelineCPU (
   );
 
 
-  //Display
+  //显示信号输出
   assign DP_curPC = Demo_PC;
   assign DP_nextPC = Demo_newPC;
   assign DP_Reg = Demo_Reg;
@@ -408,8 +412,6 @@ module PipelineCPU (
   assign DP_EX_Result = EX_Result[7:0];
   assign DP_MEM_PC = MEM_PC[7:0] ? MEM_PC[7:0] - 4 : MEM_PC[7:0];
   assign DP_MEM_Read = MEM_MemData[7:0];
-  // assign DP_MEM_PC = EX_ALUinA[7:0];
-  // assign DP_MEM_Read = EX_ALUinB[7:0];
 
 
 endmodule

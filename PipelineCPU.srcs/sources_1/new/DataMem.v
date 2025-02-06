@@ -21,16 +21,16 @@
 
 
 module DataMem (
-    input sysCLK,
-    input clk,
-    input [31:0] Result,
-    input [31:0] ReadData2,
-    input mRD,
-    input mWR,
-    output reg [31:0] MemData
+    input cntCLK,  //计数时钟
+    input clk,  //时钟信号
+    input [31:0] Result,  //ALU运算结果
+    input [31:0] ReadData2,  //寄存器输出数据2
+    input mRD,  //读数据存储器控制, 0: 输出高阻态, 1: 读数据存储器
+    input mWR,  //写数据存储器控制, 0: 无操作, 1: 写数据存储器
+    output reg [31:0] MemData  //读出数据
 );
 
-  //定义输入数据
+  //定义写入数据
   wire [31:0] DataAddr = Result;
   wire [31:0] DataIn = ReadData2;
 
@@ -45,16 +45,21 @@ module DataMem (
     end
   end
 
+  //定义Clock-to-Q
+  integer _CLOCK_TO_Q = 1;
+
+  //定义计数器
   reg [31:0] cnt;
 
-  always @(posedge sysCLK) begin
+  //延迟计数器，在计数时钟上升沿触发，若时钟信号为高电平，则计数器自增，反之则清零
+  always @(posedge cntCLK) begin
     if (clk) cnt <= cnt + 1;
     else cnt <= 0;
   end
 
   //写入数据存储器
-  always @(posedge sysCLK) begin
-    if (cnt == 1 && mWR) begin
+  always @(posedge cntCLK) begin
+    if (cnt == _CLOCK_TO_Q && mWR) begin  //Clock-to-Q时触发
       DataMem[DataAddr]   <= DataIn[31:24];
       DataMem[DataAddr+1] <= DataIn[23:16];
       DataMem[DataAddr+2] <= DataIn[15:8];

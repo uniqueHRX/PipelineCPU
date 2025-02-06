@@ -21,11 +21,12 @@
 
 
 module Adder (
-    input  [31:0] inA,
-    input  [31:0] inB,
-    output [31:0] Sum
+    input  [31:0] inA,  //输入1
+    input  [31:0] inB,  //输入2
+    output [31:0] Sum   //输出
 );
 
-assign Sum = inA + (inB << 2);
+  //对输入2移位并与输入1求和输出
+  assign Sum = inA + (inB << 2);
 
 endmodule

@@ -21,11 +21,11 @@
 
 
 module EX_MEM (
-    input sysCLK,
-    input clk,
-    input rstn,
-    input clear,
-    input [31:0] PC_in,
+    input cntCLK,  //计数时钟
+    input clk,  //时钟信号
+    input rstn,  //重置信号
+    input clear,  //清零信号, 0: 保持, 1: 清零
+    input [31:0] PC_in,  //从EX段读入数据与控制信号
     input [31:0] BranchPC_in,
     input [31:0] Ins_in,
     input [15:0] Signals_in,
@@ -34,7 +34,7 @@ module EX_MEM (
     input zero_in,
     input sign_in,
     input [4:0] WriteReg_in,
-    output reg [31:0] PC_out,
+    output reg [31:0] PC_out,  //向MEM段输出数据与控制信号
     output reg [31:0] BranchPC_out,
     output reg [31:0] Ins_out,
     output reg [15:0] Signals_out,
@@ -102,10 +102,14 @@ module EX_MEM (
   //   end
   // end
 
+  //定义Clock-to-Q
+  integer _CLOCK_TO_Q = 3;
 
+  //定义计数器
   reg [31:0] cnt;
 
-  always @(posedge sysCLK or negedge rstn) begin
+  //延迟计数器，在计数时钟上升沿触发，若时钟信号为高电平，则计数器自增，反之则清零
+  always @(posedge cntCLK or negedge rstn) begin
     if (!rstn) begin
       cnt <= 0;
     end else begin
@@ -115,8 +119,8 @@ module EX_MEM (
   end
 
   //输出与重置
-  always @(posedge sysCLK or negedge rstn or posedge clear) begin
-    if (rstn && !clear && cnt == 3) begin
+  always @(posedge cntCLK or negedge rstn or posedge clear) begin
+    if (rstn && !clear && cnt == _CLOCK_TO_Q) begin  //Clock-to-Q时触发
       PC_out <= PC_in;
       BranchPC_out <= BranchPC_in;
       Ins_out <= Ins_in;
@@ -126,7 +130,7 @@ module EX_MEM (
       zero_out <= zero_in;
       sign_out <= sign_in;
       WriteReg_out <= WriteReg_in;
-    end else if (!rstn || clear) begin
+    end else if (!rstn || clear) begin  //重置或清零信号生效时触发
       PC_out <= 0;
       BranchPC_out <= 0;
       Ins_out <= 0;

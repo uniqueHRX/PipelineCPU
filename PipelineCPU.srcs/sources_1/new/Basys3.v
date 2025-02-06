@@ -46,7 +46,7 @@ module Basys3 (
 
   //Ä£¿éÀý»¯
   PipelineCPU PipelineCPU (
-      .sysCLK      (cntCLK),
+      .cntCLK      (cntCLK),
       .clk         (userCLK),
       .rstn        (reset),
       .DP_curPC    (DP_curPC),

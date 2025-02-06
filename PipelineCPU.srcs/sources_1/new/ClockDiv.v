@@ -21,10 +21,10 @@
 
 
 module ClockDiv (
-    input clk,
-    input rstn,
-    output reg sysCLK,
-    output reg cntCLK
+    input clk,  //硬件时钟
+    input rstn,  //重置信号
+    output reg sysCLK,  //系统时钟
+    output reg cntCLK  //计数时钟
 );
 
   //定义系统时钟周期时间
@@ -43,13 +43,13 @@ module ClockDiv (
   //对硬件时钟进行分频
   always @(posedge clk) begin
     if (count1 >= _sysCLK_TIME) begin
-      count1  <= 0;
-      sysCLK <= !sysCLK;
+      count1 <= 0;
+      sysCLK <= !sysCLK;  //在计数到达目标时对系统时钟信号取反
     end else count1 <= count1 + 1;
 
     if (count2 >= _cntCLK_TIME) begin
-      count2  <= 0;
-      cntCLK <= !cntCLK;
+      count2 <= 0;
+      cntCLK <= !cntCLK;  //在计数到达目标时对计数时钟信号取反
     end else count2 <= count2 + 1;
   end
 

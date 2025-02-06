@@ -21,18 +21,20 @@
 
 
 module Halt (
-    input rstn,
-    input [31:0] WB_Ins,
-    input [31:0] WB_PC,
-    output reg Halt,
-    output reg [31:0] PC
+    input rstn,  //重置信号
+    input [31:0] WB_Ins,  //WB段指令
+    input [31:0] WB_PC,  //WB段PC
+    output reg Halt,  //停机信号, 0: 正常运行, 1: 停机
+    output reg [31:0] PC  //停机目标PC
 );
 
+  //初始化
   initial begin
     Halt = 0;
     PC   = 0;
   end
 
+  //判断停机指令
   always @(*) begin
     if (!Halt && WB_Ins[31:26] == 6'b111111 && rstn) begin
       Halt = 1;
@@ -43,9 +45,9 @@ module Halt (
     end
   end
 
-//   always @(negedge rstn) begin
-//     Halt = 0;
-//     PC   = 0;
-//   end
+  //   always @(negedge rstn) begin
+  //     Halt = 0;
+  //     PC   = 0;
+  //   end
 
 endmodule

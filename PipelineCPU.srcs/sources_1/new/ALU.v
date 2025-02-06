@@ -21,31 +21,25 @@
 
 
 module ALU (
-    input sysCLK,
-    input [2:0] ALUOp,
-    input [31:0] ReadData1,
-    input [31:0] ReadData2,
-    input [31:0] Extend,
-    input [4:0] sa,
-    input [31:0] MEM_Data,
-    input [31:0] WB_Data,
-    input ALUSrcA,
-    input ALUSrcB,
-    input [1:0] FSrcA,
-    input [1:0] FSrcB,
-    output [31:0] Result,
-    output sign,
-    output zero,
-    output [31:0] ALUinA,
-    output [31:0] ALUinB
+    input [2:0] ALUOp,  //ALU控制信号
+    input [31:0] ReadData1,  //寄存器输出数据1
+    input [31:0] ReadData2,  //寄存器输出数据2
+    input [31:0] Extend,  //扩展立即数
+    input [4:0] sa,  //指令sa段
+    input [31:0] MEM_Data,  //MEM段旁路数据
+    input [31:0] WB_Data,  //WB段旁路数据
+    input ALUSrcA,  //ALU数据源1, 0: ReadData1或旁路, 1: sa
+    input ALUSrcB,  //ALU数据源2, 0: ReadData2或旁路, 1: Extend
+    input [1:0] FSrcA,  //ALU数据源1旁路控制, 00: ReadData1, 01: MEM_Data, 10: WB_Data
+    input [1:0] FSrcB,  //ALU数据源2旁路控制, 00: ReadData2, 01: MEM_Data, 10: WB_Data
+    output [31:0] Result,  //运算结果
+    output sign,  //正负标志
+    output zero  //0标志
 );
 
   //定义输入ALU输入数据信号
   wire [31:0] inA;
   wire [31:0] inB;
-
-  assign ALUinA = inA;
-  assign ALUinB = inB;
 
   //例化输入选择器模块
   Mux32bit MuxALUSrcA (
@@ -68,8 +62,7 @@ module ALU (
       .ret(inB)
   );
 
-  //核心功能
-  //根据ALUOp进行算术运算
+  //根据ALUOp进行算术逻辑运算
   assign Result = (ALUOp == 3'b000) ? (inA + inB)
                   : (ALUOp == 3'b001) ? (inA - inB)
                   : (ALUOp == 3'b010) ? (inB << inA)
@@ -83,6 +76,5 @@ module ALU (
   //根据运算结果输出sign和zero信号
   assign sign = Result[31] ? 1 : 0;
   assign zero = Result ? 0 : 1;
-
 
 endmodule
