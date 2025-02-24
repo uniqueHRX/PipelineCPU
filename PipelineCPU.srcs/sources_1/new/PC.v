@@ -30,18 +30,6 @@ module PC (
     output reg [31:0] curPC  //当前PC输出
 );
 
-  // reg [31:0] nextPC;
-
-  //初始化PC寄存器
-  // initial begin
-  //   curPC = 0;
-  //   nextPC = 0;
-  // end
-
-  // always @(negedge clk) begin
-  //   if (rstn) nextPC <= newPC0;
-  // end
-
   //定义Clock-to-Q
   integer _CLOCK_TO_Q = 8;
 

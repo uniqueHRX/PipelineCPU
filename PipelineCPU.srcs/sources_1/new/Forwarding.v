@@ -38,14 +38,6 @@ module Forwarding (
     output reg [31:0] WB_Data_out  //WB_Data ‰≥ˆ
 );
 
-  // assign FSrcA = (MEM_RegWre && MEM_WriteReg == rs) ? 2'b01
-  //               : (WB_RegWre && WB_WriteReg == rs) ? 2'b10
-  //               : 2'b00;
-
-  // assign FSrcB = (MEM_RegWre && MEM_WriteReg == rt) ? 2'b01
-  //               : (WB_RegWre && WB_WriteReg == rt) ? 2'b10
-  //               : 2'b00;
-
   //∂®“ÂClock-to-Q
   integer _CLOCK_TO_Q = 7;
 

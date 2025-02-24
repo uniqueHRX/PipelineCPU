@@ -36,26 +36,6 @@ module Branch (
     output reg [31:0] newPC  //ÐÂPC
 );
 
-  // assign Branch = Halt ? 1
-  //                 : (Ins[31:26] == 6'b000010) ? 1
-  //                 : (Ins[31:26] == 6'b000011) ? 1
-  //                 : (Ins[31:26] == 6'b000000 && Ins[5:0] == 6'b001000) ? 1
-  //                 : (Ins[31:26] == 6'b000100 && zero) ? 1
-  //                 : (Ins[31:26] == 6'b000101 && !zero) ? 1
-  //                 : (Ins[31:26] == 6'b000110 && (sign || zero)) ? 1
-  //                 : (Ins[31:26] == 6'b000001 && sign) ? 1
-  //                 : 0;
-
-  // assign newPC = Halt ? HaltPC
-  //               : (Ins[31:26] == 6'b000010) ? (PC[31:28] << 28) + (Ins[25:0] << 2)
-  //               : (Ins[31:26] == 6'b000011) ? (PC[31:28] << 28) + (Ins[25:0] << 2)
-  //               : (Ins[31:26] == 6'b000000 && Ins[5:0] == 6'b001000) ? Result
-  //               : (Ins[31:26] == 6'b000100 && zero) ? BranchPC
-  //               : (Ins[31:26] == 6'b000101 && !zero) ? BranchPC
-  //               : (Ins[31:26] == 6'b000110 && (sign || zero)) ? BranchPC
-  //               : (Ins[31:26] == 6'b000001 && sign) ? BranchPC
-  //               : PC;
-
   //¶¨ÒåClock-to-Q
   integer _CLOCK_TO_Q = 4;
 

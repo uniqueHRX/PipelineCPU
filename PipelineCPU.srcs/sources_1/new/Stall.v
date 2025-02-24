@@ -32,11 +32,6 @@ module Stall (
     output reg [31:0] newPC  //ÐÂPC
 );
 
-  // assign PCSrc = Branch ? 1 : (Ins[31:26] == 6'b100011) ? 1 : 0;
-
-  // assign newPC = Branch ? BranchPC : curPC;
-
-
   //¶¨ÒåClock-to-Q
   integer _CLOCK_TO_Q = 6;
 

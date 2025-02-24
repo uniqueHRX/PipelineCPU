@@ -45,9 +45,4 @@ module Halt (
     end
   end
 
-  //   always @(negedge rstn) begin
-  //     Halt = 0;
-  //     PC   = 0;
-  //   end
-
 endmodule

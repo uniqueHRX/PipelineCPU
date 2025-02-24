@@ -31,19 +31,6 @@ module IF_ID (
     output reg [31:0] Ins_out
 );
 
-  // reg [31:0] PC;
-  // reg [31:0] Ins;
-
-  //初始化
-  // initial begin
-  //   // PC  = 0;
-  //   // Ins = 0;
-  //   if (rstn) begin
-  //     PC_out  = 0;
-  //     Ins_out = 0;
-  //   end
-  // end
-
   //定义Clock-to-Q
   integer _CLOCK_TO_Q = 7;
 
@@ -70,28 +57,5 @@ module IF_ID (
       Ins_out <= 0;
     end
   end
-
-  // //更新与重置
-  // always @(posedge clk or negedge rstn or posedge clear) begin
-  //   if (rstn && !clear) begin
-  //     PC_out  <= PC_in;
-  //     Ins_out <= Ins_in;
-  //   end else begin
-  //     PC_out  <= 0;
-  //     Ins_out <= 0;
-  //   end
-  // end
-
-  // //输出
-  // always @(posedge clk) begin
-  //   PC_out  = PC;
-  //   Ins_out = Ins;
-  // end
-
-  //重置
-  // always @(negedge rstn or posedge clear) begin
-  //   if (PC) PC  = 0;
-  //   if (Ins) Ins = 0;
-  // end
 
 endmodule
